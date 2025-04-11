@@ -230,29 +230,29 @@ class customer // class of customer...
 				vector<string> arr(h); // Define vector for the goods customer wants to buy.
 				display_commodity(); // Run display commodity function.
 				float sum=0.0f; // Define variable to store the amount of money the customer must pay.
-				for (int i=0; i<h; i++) // 
+				for (int i=0; i<h; i++) // This loop for getting the names of products customer want to buy.
 				{
-					cout << "please enter a name of the commodity you want to buy: " << endl;
-					cin >> arr[i];
-					bool found = false;
-					for (int j=0; j< goods.size() ; j++)
+					cout << "please enter a name of the commodity you want to buy: " << endl; // Asking for name of product customer want to buy.
+					cin >> arr[i]; // Getting the name of the product customer want to buy.
+					bool found = false; 
+					for (int j=0; j< goods.size() ; j++) // Loop to find the value of the desired product and calculate the amount payable to the customer.
 					{
-						if (goods[j].name==arr[i])
+						if (goods[j].name==arr[i]) // Find the product.
 						{
-							sum+= goods[j].price;
+							sum+= goods[j].price; // Calculate the final price.
 							found= true;
 							break;
 						}
 					}
 					if (!found)
 					{
-						cout << arr[i] << "not found in inventory." << endl;
+						cout << arr[i] << "not found in inventory." << endl; // If the desired product is not available.
 					}
 				}
 			}
 			for (int j=0; j<h; j++)
 			{
-				cout << "all preachers: " << sum << endl;
+				cout << "all preachers: " << sum << endl; // Display the amount payable.
 			}
 		}
 		void addToBalance_m()
