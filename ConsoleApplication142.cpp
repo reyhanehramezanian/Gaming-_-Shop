@@ -97,35 +97,35 @@ public: // Public access...
 
 		//	}
 	}
-	void addToBalance_m()
+	void addToBalance_m() // Define a function to add balance to a customer's wallet.
 	{
-		float amount_m;
-		cout << "how much do you want to top up your account?" << endl;
-		cin >> amount_m;
+		float amount_m; // Define a variable to store the amount the user wants to increase the credit by.
+		cout << "how much do you want to top up your account?" << endl; // Asking for the amount the user wants to add to the wallet.
+		cin >> amount_m; // Getting the amount the user wants to add to the wallet.
 		extern double balance_m;
-		if (amount_m > 0)
+		if (amount_m > 0)  // Checking the correctness of the entered value.
 		{
-			balance_m += amount_m;
-			cout << "your wallet has been succesfully charged to" << amount_m << '.' << endl;
+			balance_m += amount_m; // Add the entered amount to the wallet balance.
+			cout << "your wallet has been succesfully charged to" << amount_m << '.' << endl; // Display message " Inventory increase was successful.".
 		}
-		else
+		else // If entered value is not true.
 		{
-			cout << "the entered value is not correct!" << endl;
+			cout << "the entered value is not correct!" << endl; // Display message "The entered value is incorrect.".
 		}
-		Balance_m();
-	}
-	void Balance_m()
+		Balance_m(); // Run the function Balance_m (show wallet amount).
+ 	}
+	void Balance_m() // Define a function to display the balance of the customer's wallet.
 	{
-		cout << "your wallet balance: " << balance_m << endl;
+		cout << "your wallet balance: " << balance_m << endl; // Display the balance of the customer's wallet.
 	}
-	void products_by_category()
+	void products_by_category() // Define a function to display products by category.
 	{
-		cout << "categories available: " << endl;
+		cout << "categories available: " << endl; // View our available categories.
 		cout << "1. game" << endl << "2. console" << endl << "3. monitor" << "4. headset" << endl;
-		cout << "Enter the category number you want please: ";
-		int w;
-		cin >> w;
-		switch (w)
+		cout << "Enter the category number you want please: "; // Requesting the desired category to display products within it.
+		int w; // Variable definition to get the desired category number.
+		cin >> w; // Get the desired category number variable.
+		switch (w) // 
 		{
 		case 1:
 			cout << "games" << endl;
@@ -386,10 +386,10 @@ public: // Public access...
 			default:
 				cout << "The option is invalid!" << endl; // This is not a correct choice.
 			}
-		} while (choice != 0);
+		} while (choice != 0); // The loop runs until the user enter 0.
 	}
 };
-string pass_add = "admin1admin";
+string pass_add = "admin1admin"; // Define a variable to store the password.
 int main() // The main body of the code
 {
 	mangare admin; // Defining an object (admin) of a class managare.
