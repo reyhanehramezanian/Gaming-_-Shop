@@ -390,35 +390,35 @@ public: // Public access...
 	}
 };
 string pass_add = "admin1admin";
-int main()
+int main() // The main body of the code
 {
-	mangare admin;
-	customer buyer;
-	int q;
-	string pass;
-	cout << "Hi welcome to our site!" << endl << "Please enter your user mode from the options: " << endl << "If you are a customer, enter the number 1." << endl << "If you are a administration, enter number 2." << endl;
-	cin >> q;
-	switch (q)
+	mangare admin; // Defining an object (admin) of a class managare.
+	customer buyer; // Defining an object (buyer) of a class customer.
+	int q; // Variable defintion to receive the choice between 1 and 2.
+	string pass; // Define a string to store the password received from the user.
+	cout << "Hi welcome to our site!" << endl << "Please enter your user mode from the options: " << endl << "If you are a admin, enter the number 1." << endl << "If you are a customer, enter number 2." << endl;
+	// Desplay a welcome message and ask the user for a number to display the user for a number to display the user's requested menu.
+	cin >> q; // Getting input from the user between 1 and 2.
+	switch (q) // Using a switch to display a user menu.
 	{
-	case 1:
-
-		cout << "Please enter the password: ";
-		cin >> pass;
-		if (pass == pass_add)
+	case 1: // If the user enter the number1.
+        cout << "Please enter the password: "; // Asking the user for a password. 
+		cin >> pass; // Getting the user password.
+		if (pass == pass_add) // If the password was correct.
 		{
-			admin.menu1();
+			admin.menu1(); // Display the menu1 (run function menu1 in class manager)
 		}
-		else
+		else // If the password was not correct.
 		{
-			cout << "False password!" << endl;
+			cout << "False password!" << endl; // Display message "incorrect password"
 			return 0;
 		}
-		break;
-	case 2:
-		buyer.menu2();
-		break;
-	default:
-		cout << "Please enter the correct answer!" << endl;
+		break; // Using break so that if this case is executed, it does not check the remaining cases.
+	case 2: // If the user enter the number2.
+		buyer.menu2(); // Display the menu2 (run function menu2 in class customer).
+		break; // Using break so that if this case is executed, it does not check the remaining cases.
+	default: // If the user's choice was anything other than 1 or 2.
+		cout << "Please enter the correct answer!" << endl; // Show message "please enter a valid input".
 	}
 	return 0;
 }
