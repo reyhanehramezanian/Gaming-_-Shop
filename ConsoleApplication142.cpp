@@ -125,55 +125,55 @@ public: // Public access...
 		cout << "Enter the category number you want please: "; // Requesting the desired category to display products within it.
 		int w; // Variable definition to get the desired category number.
 		cin >> w; // Get the desired category number variable.
-		switch (w) // 
+		switch (w) // Use switch to separate and display products by category.
 		{
-		case 1:
+		case 1: // If user selacts the number1 (actually the games category).
 			cout << "games" << endl;
-			for (int i = 0; i < goods.size(); i++)
+			for (int i = 0; i < goods.size(); i++) // A loop to navigate through products.
 			{
-				if (goods[i].category == "game")
+				if (goods[i].category == "game") // The condition is that the product is from the games category.
 				{
-					cout << goods[i].name << endl;
+					cout << goods[i].name << endl; // Display the name of the game.
 				}
 			}
 			break;
-		case 2:
-			cout << "consol" << endl;
-			for (int i = 0; i < goods.size(); i++)
+		case 2: // If user selacts the number2 (actually the games console).
+			cout << "consol" << endl; 
+			for (int i = 0; i < goods.size(); i++) // A loop to navigate through products.
 			{
-				if (goods[i].category == "console")
+				if (goods[i].category == "console") // The condition is that the product is from the console category.
 				{
-					cout << goods[i].name << endl;
+					cout << goods[i].name << endl; // Display the name of the console.
 				}
 			}
 			break;
-		case 3:
+		case 3: // If user selacts the number3 (actually the monitor category).
 			cout << "monitor" << endl;
-			for (int i = 0; i < goods.size(); i++)
+			for (int i = 0; i < goods.size(); i++) // A loop to navigate through products.
 			{
-				if (goods[i].category == "monitor")
+				if (goods[i].category == "monitor") // The condition is that the product is from the monitor category.
 				{
-					cout << goods[i].name << endl;
+					cout << goods[i].name << endl; // Display the name of the monitor.
 				}
 			}
 			break;
-		case 4:
+		case 4: // If user selacts the number3 (actually the headset category).
 			cout << "headset" << endl;
-			for (int i = 0; i < goods.size(); i++)
+			for (int i = 0; i < goods.size(); i++) // A loop to navigate through products.
 			{
-				if (goods[i].category == "headset")
+				if (goods[i].category == "headset") // The condition is that the product is from the headset category.
 				{
-					cout << goods[i].name << endl;
+					cout << goods[i].name << endl; // Display the name of the headset.
 				}
 			}
 			break;
 		}
 	}
-	void menu2()
+	void menu2() // Customer menu function definition.
 	{
-		int choice;
-		string pass_add;
-		customer admin;
+		int choice; // Define a variable to store the user's selection.
+		string pass_add; // Define a variable to store the password.
+		customer admin; // Object definition admin from class customer.
 		do
 		{
 			cout << "goods inventory menu:" << endl;
