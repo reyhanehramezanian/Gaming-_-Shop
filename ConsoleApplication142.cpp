@@ -173,10 +173,10 @@ public: // Public access...
 	{
 		int choice; // Define a variable to store the user's selection.
 		string pass_add; // Define a variable to store the password.
-		customer admin; // Object definition admin from class customer.
+		customer admin; // Object definition admin from class customer.00
 		do
 		{
-			cout << "goods inventory menu:" << endl;
+			cout << "goods inventory menu:" << endl; 
 			cout << "1. search a commodity." << endl;
 			cout << "2. show goods." << endl;
 			cout << "3. top up wallet." << endl;
@@ -190,30 +190,30 @@ public: // Public access...
 			string pass;
 			switch (choice)
 			{
-			case 1:
-				search_commodity();
+			case 1: // If user entered number1 (search commodity by name).
+				search_commodity(); // run the search_commodity function.
 				break;
-			case 2:
-				display_commodity();
+			case 2: // If user entered number2 (show goods).
+				display_commodity(); // run the display_commodity function.
 				break;
-			case 3:
-				addToBalance_m();
+			case 3: // If user entered number3 (add to balance).
+				addToBalance_m(); // run the addToBalance_m function.
 				break;
-			case 4:
-				Balance_m();
+			case 4: // If user entered number4 (show balance).
+				Balance_m(); // run the balance_m function.
 				break;
-			case 5:
-				shopping_cart();
+			case 5: // If user entered number4 (shopping cart).
+				shopping_cart(); // run the shopping_cart function.
 				break;
-			case 6:
-				products_by_category();
+			case 6: // If user entered number5 (show goods by category).
+				products_by_category(); // run the products_by_category function.
 				break;
-			case 7:
-				cout << "Please enter the password: ";
-				cin >> pass;
-				if (pass == pass_add)
+			case 7: // If user entered number6 (go to admin menu).
+				cout << "Please enter the password: "; // Ask for password.
+				cin >> pass; // Get the password.
+				if (pass == pass_add) // If password was true.
 				{
-					admin.menu2();
+					admin.menu2(); // Show admin menu.
 				}
 				break;
 			case 0:
