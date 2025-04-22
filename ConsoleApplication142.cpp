@@ -56,7 +56,7 @@ public: // Public access...
 	}
 	void shopping_cart() // Defining a function for the shopping cart.
 	{
-		string name; //
+		string name;
 		int h; // A variable to store the number of item the user wants to buy.
 		cout << "how many items do you want to buy?"; // Asking for the number of item the user wants to buy.
 		cin >> h; // Gettig the number of item the user wants to buy.

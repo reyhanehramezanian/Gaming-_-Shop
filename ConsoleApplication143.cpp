@@ -15,7 +15,7 @@ class customer // class of customer...
 {
 public: // Public access...
 
-	void search_commodity() // Searched for the product.
+	void searching_commodity() // Searched for the product.
 	{
 		string name; // The name of the product we are looking for.
 		cout << "Whats commodity are you loking for?" << endl; // Asking for the name of the product we are looking for.
@@ -165,61 +165,9 @@ public: // Public access...
 			break;
 		}
 	}
-	void menu2() // Customer menu function definition.
-	{
-		int choice; // Define a variable to store the user's selection.
-		string pass_add; // Define a variable to store the password.
-		customer admin; // Object definition admin from class customer.00
-		do
-		{
-			cout << "goods inventory menu:" << endl;
-			cout << "1. search a commodity." << endl;
-			cout << "2. show goods." << endl;
-			cout << "3. top up wallet." << endl;
-			cout << "4. balance of money in user account." << endl;
-			cout << "5. shopping cart." << endl;
-			cout << "6. show products by category." << endl;
-			cout << "7. go to the admin menu." << endl;
-			cout << "0.exit" << endl;
-			cout << "please enter your choice:" << endl;
-			cin >> choice;
-			string pass;
-			switch (choice)
-			{
-			case 1: // If user entered number1 (search commodity by name).
-				search_commodity(); // run the search_commodity function.
-				break;
-			case 2: // If user entered number2 (show goods).
-				display_commodity(); // run the display_commodity function.
-				break;
-			case 3: // If user entered number3 (add to balance).
-				addToBalance_m(); // run the addToBalance_m function.
-				break;
-			case 4: // If user entered number4 (show balance).
-				Balance_m(); // run the balance_m function.
-				break;
-			case 5: // If user entered number4 (shopping cart).
-				shopping_cart(); // run the shopping_cart function.
-				break;
-			case 6: // If user entered number5 (show goods by category).
-				products_by_category(); // run the products_by_category function.
-				break;
-			case 7: // If user entered number6 (go to admin menu).
-				cout << "Please enter the password: "; // Ask for password.
-				cin >> pass; // Get the password.
-				if (pass == pass_add) // If password was true.
-				{
-					admin.menu2(); // Show admin menu.
-				}
-				break;
-			case 0:
-				cout << "exit" << endl;
-				break;
-			default:
-				cout << "the option is invalid!" << endl;
-			}
-		} while (choice != 0);
-	}
+
+
+
 };
 
 double balance_sh = 0; // Define the manager(shop)'s wallet and putting 0 into it.
@@ -332,11 +280,15 @@ public: // Public access...
 		}
 		Balance_sh(); // Show the amount in the wallet.
 	}
-	void menu1() // Menu function for admin.
+	
+};
+string pass_add = "admin1admin"; // Define a variable to store the password.
+
+void menu1() // Menu function for admin.
 	{
 
 		int choice; // Define a variable for user selection.
-		customer buyer; /// Define an object of class customer named buyer.
+		mangare admin; /// Define an object of class customer named buyer.
 		do
 		{
 			cout << "Goods inventory menu" << endl; // Show menu.
@@ -347,36 +299,35 @@ public: // Public access...
 			cout << "5. Calculation of the total value of the inventory." << endl;
 			cout << "6. Store wallet inventory. " << endl;
 			cout << "7. Store wallet charging. " << endl;
-			cout << "8. Go to the customer menu. " << endl;
+			cout << "8. Go to the menu. " << endl;
 			cout << "0. Exit" << endl;
 			cout << "Please enter your choice: "; // Asking for choice.
 			cin >> choice; // Getting choice.
 			switch (choice)
 			{
 			case 1:
-				add_commodity(); // Run the add product function.
+				admin.add_commodity(); // Run the add product function.
 				break;
 			case 2:
-				remove_commodity(); // Run the remove product function.
+				admin.remove_commodity(); // Run the remove product function.
 				break;
 			case 3:
-				search_commodity(); // Run the search commodity function.
+				admin.search_commodity(); // Run the search commodity function.
 				break;
 			case 4:
-				display_commodity(); // Run the display commodity function.
+				admin.display_commodity(); // Run the display commodity function.
 				break;
 			case 5:
-				calculateTotalValue(); // Run the calculate total value function.
+				admin.calculateTotalValue(); // Run the calculate total value function.
 				break;
 			case 6:
-				Balance_sh(); // Run the balance shop function.
+				admin.Balance_sh(); // Run the balance shop function.
 				break;
 			case 7:
-				addToBalance_sh(); // Run the add to balance shop function.
+				admin.addToBalance_sh(); // Run the add to balance shop function.
 				break;
-			case 8:
-				buyer.menu2(); // go to buyer menu. Run the menu2 function in the class customer.
-				break;
+			case 8://go to the meno
+				return;
 			case 0:
 				cout << "Exit" << endl; // exit the app.
 			default:
@@ -384,14 +335,72 @@ public: // Public access...
 			}
 		} while (choice != 0); // The loop runs until the user enter 0.
 	}
-};
-string pass_add = "admin1admin"; // Define a variable to store the password.
+	
+
+
+
+	void menu2() // Customer menu function definition.
+	{
+		int choice; // Define a variable to store the user's selection.
+		string pass_add; // Define a variable to store the password.
+	    customer buyer;
+		do
+		{
+			cout << "goods inventory menu:" << endl;
+			cout << "1. search a commodity." << endl;
+			cout << "2. show goods." << endl;
+			cout << "3. top up wallet." << endl;
+			cout << "4. balance of money in user account." << endl;
+			cout << "5. shopping cart." << endl;
+			cout << "6. show products by category." << endl;
+			cout << "7. go to the menu." << endl;
+			cout << "0.exit" << endl;
+			cout << "please enter your choice:" << endl;
+			cin >> choice;
+			string pass;
+			switch (choice)
+			{
+			case 1: // If user entered number1 (search commodity by name).
+				buyer.searching_commodity(); // run the search_commodity function.
+				break;
+			case 2: // If user entered number2 (show goods).
+				buyer.display_commodity(); // run the display_commodity function.
+				break;
+			case 3: // If user entered number3 (add to balance).
+				buyer.addToBalance_m(); // run the addToBalance_m function.
+				break;
+			case 4: // If user entered number4 (show balance).
+				buyer.Balance_m(); // run the balance_m function.
+				break;
+			case 5: // If user entered number4 (shopping cart).
+				buyer.shopping_cart(); // run the shopping_cart function.
+				break;
+			case 6: // If user entered number5 (show goods by category).
+				buyer.products_by_category(); // run the products_by_category function.
+				break;
+			case 7: // If user entered number6 (go to menu)
+				break;
+			case 0:
+				cout << "exit" << endl;
+				return;
+			default:
+				cout << "the option is invalid!" << endl;
+			}
+		} while (choice != 0);
+	}
+	
+	
+		
+	
 int main() // The main body of the code
 {
 	mangare admin; // Defining an object (admin) of a class managare.
 	customer buyer; // Defining an object (buyer) of a class customer.
 	int q; // Variable defintion to receive the choice between 1 and 2.
 	string pass; // Define a string to store the password received from the user.
+	
+	
+	do{
 	cout << "Hi welcome to our site!" << endl << "Please enter your user mode from the options: " << endl << "If you are a admin, enter the number 1." << endl << "If you are a customer, enter number 2." << endl;
 	// Desplay a welcome message and ask the user for a number to display the user for a number to display the user's requested menu.
 	cin >> q; // Getting input from the user between 1 and 2.
@@ -402,19 +411,20 @@ int main() // The main body of the code
 		cin >> pass; // Getting the user password.
 		if (pass == pass_add) // If the password was correct.
 		{
-			admin.menu1(); // Display the menu1 (run function menu1 in class manager)
+		menu1(); // Display the menu1 (run function menu1 in class manager)
 		}
 		else // If the password was not correct.
 		{
 			cout << "False password!" << endl; // Display message "incorrect password"
-			return 0;
+		break;
 		}
 		break; // Using break so that if this case is executed, it does not check the remaining cases.
 	case 2: // If the user enter the number2.
-		buyer.menu2(); // Display the menu2 (run function menu2 in class customer).
+	menu2(); // Display the menu2 (run function menu2 in class customer).
 		break; // Using break so that if this case is executed, it does not check the remaining cases.
 	default: // If the user's choice was anything other than 1 or 2.
 		cout << "Please enter the correct answer!" << endl; // Show message "please enter a valid input".
 	}
+}while(true);
 	return 0;
 }
